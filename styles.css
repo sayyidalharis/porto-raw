@@ -487,7 +487,7 @@ footer {
 
   /* Add some spacing between the social media icons and the copyright text in mobile view */
   .social-media-icons {
-    margin-bottom: 10px;
+    justify-content: center;
   }
 
   /* Adjust the size of the social media icons for mobile view */
@@ -495,6 +495,10 @@ footer {
     width: 25px;
     height: 25px;
   }
+
+  .social-media-icons img{
+    width: 15px;
+    height: 15px;}
 
   /* Adjust the font size of the copyright text for mobile view */
   .footer-content p {
