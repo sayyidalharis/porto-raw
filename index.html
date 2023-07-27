@@ -176,7 +176,7 @@
       link.addEventListener("click", function(event) {
         const linkText = event.target.text;
         event.preventDefault();
-        mainContent.innerHTML = `<h1>Oops!</h1><p>The <b>${linkText}</b> page is not ready yet.</p>`;
+        mainContent.innerHTML = `<h1 style="margin-top: -273px;">Oops!</h1><p>The <b>${linkText}</b> page is not ready yet.</p>`;
         isOopsState = true;
         console.log(isOopsState);
         //make the main content centered
@@ -194,6 +194,10 @@
       if (isOopsState) {
         // Restore the respective section contents to their original states
         mainContent.innerHTML = originalContent;
+        mainContent.removeAttribute('style');
+        // get the elements again
+        mainContent.style.flex = "1";
+
         const aboutSection = document.querySelector('#about');
         const skillsSection = document.querySelector('.skills-content');
         const experienceItems = document.querySelectorAll('.experience-item');
