@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sh's porto page</title>
+  <link rel="stylesheet" href="/styles.css">
+  <!-- Add the Google Fonts links -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+  <!-- ... rest of the code ... -->
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" id="Home">Home</a></li>
+        <li><a href="#" class="changeContentLink">Portfolio</a></li>
+        <li><a href="#" class="changeContentLink">Education</a></li>
+        <li><a href="#" class="changeContentLink">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<main>
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="circle-portrait">
+          <img src="your-image.jpg" alt="Your Portrait">
+        </div>
+      </div>
+      <div class="hero-right">
+        <h1 class="hero-title">Hello, I'm Sayyid Haris!</h1>
+        <p class="hero-subtitle">Aspiring SE, Class of 2023</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-content">
+    <div>
+      <h2>About Me</h2>
+      <p>
+        A passionate and driven individual who recently graduated from <b>Sumatra Institute of Technology (ITERA)</b> with a major in <b>Informatics Engineering</b>. Throughout my academic journey, I have maintained a GPA of 3.86 out of 4.00, demonstrating my dedication to excellence. 
+        I have always had a deep love for coding, especially in the realm of <b> AI and software development </b>. Building innovative software solutions and exploring the possibilities of artificial intelligence excite me beyond measure. 
+        Additionally, I have a profound interest in languages and cultures, which has further enriched my perspective on problem-solving and creativity.
+        I am now <b>eagerly seeking a dynamic and collaborative environment</b> where I can continue learning, apply my skills, and contribute to meaningful projects. Thanks xoxo -sh
+      </p>
+    </div>
+  </section>
+
+
+  <section id="experience" class="experience-content">
+    <div>
+      <h2>Experience</h2>
+      <div class="experience-grid">
+        <div class="experience-item">
+          <h3>Software Engineer Intern</h3>
+          <p class="experience-duration">Datangin, Jul - Dec 2022</p>
+          <p>
+            Worked as a Software Engineer intern, assisting in the development of web & mobile applications
+            and collaborating with the team on various projects, most notably the development of payment gateway system.
+          </p>
+        </div>
+        <div class="experience-item">
+          <h3>Laboratory Assistant</h3>
+          <p class="experience-duration">ITERA, Jan 2021 - Dec 2022</p>
+          <p>
+            Served as a Laboratory Assistant, performing experiments, conducting research,
+            and supporting faculty members in the university environment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header">
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-content">
+      <div class="technical-skills">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li><strong>Python</strong>: Flask, sklearn, pandas &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;</li>
+          <li><strong>Javascript</strong>: ReactJS, ExpressJS, NextJS </li>
+          <li><strong>PHP</strong>: Laravel, CodeIgniter  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</li>
+          <li><strong>C++</strong>: CP  &nbsp;&nbsp; &nbsp;&NonBreakingSpace;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</li>
+        </ul>
+      </div>
+      <div class="language-skills">
+        <h3>Language Skills</h3>
+        <ul>
+          <li><strong>Indonesia</strong>: Native &nbsp;&nbsp;</li>
+          <li><strong>English</strong>: B2 Level</li>
+          <li><strong>Japanese</strong>: N4 Level</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+</main>
+<footer>
+  <div class="footer-content">
+    <div class="social-media-icons">
+      <a href="https://www.instagram.com/sayyidhrs" target="_blank" rel="noopener noreferrer">
+        <img src="/instagram-icon.png" alt="Instagram">
+      </a>
+      <a href="https://www.linkedin.com/in/sayyid-haris-b6814b1ab" target="_blank" rel="noopener noreferrer">
+        <img src="/linkedin-icon.png" alt="LinkedIn">
+      </a>
+    </div>
+    <p>&copy; 2023 Sayyid Haris. All rights reserved.</p>
+  </div>
+</footer>
+
+<script defer>
+  const aboutSection = document.querySelector('#about');
+  const skillsSection = document.querySelector('.skills-content');
+  const experienceItems = document.querySelectorAll('.experience-item');
+  const technicalSkills = document.querySelector('.technical-skills');
+  const languageSkills = document.querySelector('.language-skills');
+  // get skill header
+  const skillHeader = document.querySelector('.section-header');
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+
+  function fadeInItems() {
+    experienceItems.forEach((item, index) => {
+      if (isInViewport(item) && !item.classList.contains('fade-in')) {
+        setTimeout(() => {
+          item.classList.add('fade-in');
+        }, index * 400); // Adjust the interval (milliseconds) between each item appearance
+      }
+    });
+  }
+
+  function handleScroll() {
+    if (isInViewport(aboutSection) && !aboutSection.classList.contains('fade-in')) {
+      aboutSection.classList.add('fade-in');
+    }
+
+    // for skill
+    if (isInViewport(skillsSection) && !technicalSkills.classList.contains('fade-in')) {
+      skillHeader.classList.add('fade-in');
+      setTimeout(() => {
+        technicalSkills.classList.add('fade-in');    
+        setTimeout(() => {
+          languageSkills.classList.add('fade-in');
+        }, 400);  
+      }, 400);
+    }
+
+    fadeInItems();
+  }
+  window.addEventListener('scroll', handleScroll);
+  
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const changeContentLinks = document.querySelectorAll(".changeContentLink");
+    const mainContent = document.querySelector("main");
+    const originalContent = mainContent.innerHTML;
+    const homeLink = document.querySelector("#Home");
+
+
+    let isOopsState = true;
+
+    changeContentLinks.forEach(function(link) {
+      link.addEventListener("click", function(event) {
+        const linkText = event.target.text;
+        event.preventDefault();
+        mainContent.innerHTML = `<h1>Oops!</h1><p>The <b>${linkText}</b> page is not ready yet.</p>`;
+        isOopsState = true;
+        console.log(isOopsState);
+        //make the main content centered
+        mainContent.style.display = "flex";
+        mainContent.style.flexDirection = "column";
+        mainContent.style.alignItems = "center";
+        mainContent.style.justifyContent = "center";
+
+      });
+    });
+
+    homeLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      // Check if the page is in the "Oops" state
+      if (isOopsState) {
+        // Restore the respective section contents to their original states
+        mainContent.innerHTML = originalContent;
+        const aboutSection = document.querySelector('#about');
+        const skillsSection = document.querySelector('.skills-content');
+        const experienceItems = document.querySelectorAll('.experience-item');
+        const technicalSkills = document.querySelector('.technical-skills');
+        const languageSkills = document.querySelector('.language-skills');
+        // get skill header
+        const skillHeader = document.querySelector('.section-header');
+        isOopsState = false; // Reset the Oops state back to false
+        console.log(isOopsState);
+
+        // Call the fadeInItems function with a slight delay to allow content rendering
+        setTimeout(() => {
+          function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+              rect.top >= 0 &&
+              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+          }
+
+          function fadeInItems() {
+            experienceItems.forEach((item, index) => {
+              if (isInViewport(item) && !item.classList.contains('fade-in')) {
+                setTimeout(() => {
+                  item.classList.add('fade-in');
+                }, index * 400); // Adjust the interval (milliseconds) between each item appearance
+              }
+            });
+          }
+
+          function handleScroll() {
+            console.log('scrolling');
+            if (isInViewport(aboutSection) && !aboutSection.classList.contains('fade-in')) {
+              aboutSection.classList.add('fade-in');
+            }
+
+            // for skill
+            if (isInViewport(skillsSection) && !technicalSkills.classList.contains('fade-in')) {
+              skillHeader.classList.add('fade-in');
+              setTimeout(() => {
+                technicalSkills.classList.add('fade-in');    
+                setTimeout(() => {
+                  languageSkills.classList.add('fade-in');
+                }, 400);  
+              }, 400);
+            }
+
+            fadeInItems();
+          }
+          window.addEventListener('scroll', handleScroll);
+        }, 100);
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
