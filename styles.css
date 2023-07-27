@@ -435,7 +435,27 @@ footer {
     margin: 10px 0; /* Add some vertical spacing between navigation items */
   }
 
+  #hero{
+    padding: 30px 20px;
+  }
+
   /* Reduce the font size of the hero title and subtitle on smaller screens */
+  .hero-content {
+    flex-direction: column; /* Change the flex direction to column on smaller screens */
+    text-align: center; /* Center the content on smaller screens */
+  }
+  
+  .hero-left,
+  .hero-right {
+    flex: none; /* Reset the flex property to none, making both sections take the full width */
+    text-align: center; /* Center the content within each section */
+    padding: 0; /* Remove any padding on smaller screens */
+  }
+  
+  .hero-right {
+    margin-top: 20px; /* Add some spacing between the sections */
+  }
+
   .hero-title {
     font-size: 28px;
   }
@@ -491,12 +511,10 @@ footer {
 }
 
 .experience-item {
-  /* ... existing styles ... */
   opacity: 0; /* Set initial opacity to 0 to hide the item */
 }
 
 .experience-item.fade-in {
-  /* ... existing styles ... */
   opacity: 1; /* Set opacity to 1 to make the item fade in */
   transition: opacity 1s ease; /* Add a smooth transition effect for the opacity change */
 }
