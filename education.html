@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sh's porto page</title>
+  <link rel="stylesheet" href="style4.css">
+  <link rel="icon" href="icons16.png" type="image/icon type">
+  <!-- Add the Google Fonts links -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="menu-icon" id="menuIcon">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" id="Home">Home</a></li>
+        <li><a href="porto.html">Projects</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<main>
+    <!-- section for two sections, first my graduation paper and second my certification, left part of sections for pic, right part of section for description -->
+    <section class="education">
+        <div class="education-content">
+            <div class="left">
+                <img src="ss/certi1.jpg" alt="Graduation Paper">
+            </div>
+            <div class="right">
+                <h2>3rd Best Graduate of ITERA's JTPI, July 2023</h2>
+                <p> Majoring in Informatics Engineering has equipped me with a strong foundation in computer science and software development. 
+                    With my CGPA of 3.86 out of 4.00, I've demonstrated my commitment to academic excellence and a deep understanding of this field. 
+                    Additionally, my undergraduate thesis specializing in machine learning showcases my ability to apply theoretical knowledge such as complex algorithms to real-world problems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="education">
+        <div class="education-content">
+            <div class="left">
+                <img src="ss/certi2.jpg" alt="Graduation Paper">
+            </div>
+            <div class="right">
+                <h2>Professional Communication by Certiport</h2>
+                <p>In addition to my technical prowess, I've also achieved certification in Professional Communication through Certiport's Communication Skills for Business (CSB) program. This certification demonstrates my proficiency in key communication principles and skills essential for success in the professional world. Effective communication is a cornerstone of collaborative and productive work environments, and this certification reaffirms my commitment to cooperate well in this area.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+<footer>
+  <div class="footer-content">
+    <div class="social-media-icons">
+      <a href="https://www.instagram.com/sayyidhrs" target="_blank" rel="noopener noreferrer">
+        <img src="instagram-icon.png" alt="Instagram">
+      </a>
+      <a href="https://www.linkedin.com/in/sayyid-haris-b6814b1ab" target="_blank" rel="noopener noreferrer">
+        <img src="linkedin-icon.png" alt="LinkedIn">
+      </a>
+    </div>
+    <p>&copy; 2023 Sayyid Haris. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const projects = document.querySelectorAll(".project-ui");
+
+    projects.forEach((project) => {
+      let images; // Define the images array for each project
+
+      if (project.id === "project1-ui") {
+        images = ["ss/11.jpg", "ss/12.jpg", "ss/13.jpg", "ss/14.jpg", "ss/15.jpg"];
+      } else if (project.id === "project2-ui") {
+        images = ["ss/21.jpg", "ss/22.jpg"];
+      } else if (project.id === "project3-ui") {
+        images = ["ss/31.jpg", "ss/32.jpg", "ss/33.jpg"];
+      } else if (project.id === "project4-ui") {
+        images = ["ss/41.jpg", "ss/42.jpg", "ss/43.jpg", "ss/44.jpg", "ss/45.jpg", "ss/46.jpg", "ss/47.jpg"];
+      } else if (project.id === "project5-ui") {
+        images = ["ss/51.jpg", "ss/52.jpg", "ss/53.jpg", "ss/54.jpg"];
+      } else if (project.id === "project6-ui") {
+        images = ["ss/61.jpg", "ss/62.jpg", "ss/63.jpg"];
+      }
+
+      let currentImageIndex = 0;
+
+      const imgElement = project.querySelector("img");
+      const prevArrow = project.querySelector(".prev");
+      const nextArrow = project.querySelector(".next");
+
+      function updateImage() {
+        imgElement.src = images[currentImageIndex];
+      }
+
+      prevArrow.addEventListener("click", function () {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateImage();
+      });
+
+      nextArrow.addEventListener("click", function () {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateImage();
+      });
+
+      // Initially update the image
+      updateImage();
+    });
+  });
+
+  // Function to add a class when an element enters the viewport
+function handleIntersection(entries, observer) {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+  entry.target.classList.add('in-viewport');
+}
+});
+}
+
+const options = {
+root: null, // Use the viewport as the root
+rootMargin: '0px', // No margin around the root
+threshold: 0.4, // Trigger when 20% of the element is visible
+};
+
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Observe the project sections
+document.querySelectorAll('.project').forEach((project) => {
+observer.observe(project);
+});
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,336 @@
+
+body {
+    background-color: #f5f5dc;
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for body text */
+    margin: 0;
+    min-height: 100vh; /* Ensure the body covers the full viewport height */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 73px;
+    padding-bottom: 73px;
+  }
+  
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for header text */
+    /* make text on the center */
+    text-align: center;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    /* Add some padding to make the clickable area larger */
+    padding: 5px 10px;
+    transition: background-color 0.2s;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 14px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  
+  /* New CSS for the footer container */
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 10px; /* Add some padding to the footer */
+    background-color: #333; /* Add a background color to the footer */
+  }
+  
+  .social-media-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-media-icons a {
+    display: inline-flex; /* Use inline-flex to control the size of the anchor element */
+    align-items: center; /* Align the icons vertically in the center */
+    justify-content: center; /* Align the icons horizontally in the center */
+    margin: 0 10px;
+    width: 30px; /* Set the width of the anchor element */
+    height: 30px; /* Set the height of the anchor element */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #fff; /* Add a background color to the icons */
+  }
+  
+  .social-media-icons img {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px; /* Adjust the size of the icons */
+    object-fit: cover; /* Ensure the icons maintain their aspect ratio */
+  }
+  
+  /* New CSS for the copyright text */
+  .footer-content p {
+    margin: 0 10px; /* Add margin to create space between the text and icons */
+  }
+
+  /* Add a scale-in animation to the social media icons */
+  .social-media-icons a {
+    animation: scaleIn 0.5s ease-in-out;
+  }
+  /* Add your general styles here */
+
+  .not-bold{
+    font-weight: normal;
+    font-size: 0.73em;
+  }
+
+  .contact-content{
+    height: 100%;
+  }
+  
+  .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .project.in-viewport{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .project-ui {
+  flex: 60;
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.project-ui img:hover {
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1.05);
+}   
+  
+  .project-ui img {
+    max-width: 737px;
+    width: 77%;
+    height: auto;
+  }
+  
+  .project-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    width: 100%;
+    margin-left: 7%;
+    gap:82.5%
+  }.arrow-container {
+    font-size: 36px;
+    padding: 10px;
+  }
+  
+  
+  .arrow {
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .project-details {
+    flex: 40;
+    padding: 20px;
+    margin-right: 73px;
+    box-shadow: 5px 0 5px 5px rgb(255, 255, 255, 0.73);
+    border-radius: 25px;
+    text-align: left;
+    /* background-color: #333;
+    color: white; */
+  }
+
+  .project-details:hover{
+    
+    transition: transform 0.5s ease-in-out;
+    transform: translate(10px, -10px);
+  }
+  
+  .project-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .project-details p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .small-details{
+    /* padding-left: 15px; */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+  
+  .project-details ul {
+    list-style: none;
+    /* make it list horizontally */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  
+  .project-details li a{
+    margin-bottom: 5px;
+    /* make text color black */
+    color: #333;
+  }
+
+  
+  
+@keyframes scaleIn {
+    from {
+      transform: scale(0.5);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+
+/* Responsive styles */
+@media screen and (max-width: 1168px) {
+    header nav ul {
+      text-align: center; /* Center the navigation items on smaller screens */
+    }
+    header nav ul li {
+      display: block; /* Display list items as blocks to stack them vertically */
+      margin: 10px 0; /* Add some vertical spacing between navigation items */
+    }
+    .project{
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 93px;
+    }
+    .portfolio-project {
+      flex-direction: column;
+    }
+  
+    .project-ui {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-ui img {
+      max-width: 95%;
+      height: auto;
+    }
+
+    /* make the project arrow under the image */
+    .project-arrows {
+      position: relative;
+      top: 0;
+      transform: translateY(0);
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-left: 0;
+      gap:0
+    }
+
+  
+    .project-details {
+      margin: 0;
+      /* center the div */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+
+  
+/* Media Query for Mobile Devices (Max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  
+  /* Add some spacing between the social media icons and the copyright text in mobile view */
+  .social-media-icons {
+    justify-content: center;
+  }
+
+  /* Adjust the size of the social media icons for mobile view */
+  .social-media-icons a {
+    width: 25px;
+    height: 25px;
+  }
+
+  .social-media-icons img{
+    width: 15px;
+    height: 15px;}
+
+  /* Adjust the font size of the copyright text for mobile view */
+  .footer-content p {
+    font-size: 12px;
+  }
+  .project-ui img {
+    width: 100%;
+  }
+
+  /* changee the project details content font size fitting to mobile */
+  .project-details p {
+    font-size: 14px;
+  }
+  
+  .project-details h2 {
+    font-size: 20px;
+  }
+
+  .project-details li {
+    font-size: 14px;
+  }
+  
+  .project-details ul {
+    font-size: 14px;
+  }
+
+  .project-details:hover{
+    transition: none;
+    transform: none;
+  }
+}

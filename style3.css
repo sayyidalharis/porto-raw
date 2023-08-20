@@ -1,0 +1,203 @@
+
+body {
+    background-color: #f5f5dc;
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for body text */
+    margin: 0;
+    min-height: 100vh; /* Ensure the body covers the full viewport height */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 137px;
+    padding-bottom: 73px;
+    height:100%
+  }
+  
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for header text */
+    /* make text on the center */
+    text-align: center;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    /* Add some padding to make the clickable area larger */
+    padding: 5px 10px;
+    transition: background-color 0.2s;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 14px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  
+  /* New CSS for the footer container */
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 10px; /* Add some padding to the footer */
+    background-color: #333; /* Add a background color to the footer */
+  }
+  
+  .social-media-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-media-icons a {
+    display: inline-flex; /* Use inline-flex to control the size of the anchor element */
+    align-items: center; /* Align the icons vertically in the center */
+    justify-content: center; /* Align the icons horizontally in the center */
+    margin: 0 10px;
+    width: 30px; /* Set the width of the anchor element */
+    height: 30px; /* Set the height of the anchor element */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #fff; /* Add a background color to the icons */
+  }
+  
+  .social-media-icons img {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px; /* Adjust the size of the icons */
+    object-fit: cover; /* Ensure the icons maintain their aspect ratio */
+  }
+  
+  /* New CSS for the copyright text */
+  .footer-content p {
+    margin: 0 10px; /* Add margin to create space between the text and icons */
+  }
+
+  /* Add a scale-in animation to the social media icons */
+  .social-media-icons a {
+    animation: scaleIn 0.5s ease-in-out;
+  }
+  /* Add your general styles here */
+
+  .not-bold{
+    font-weight: normal;
+    font-size: 0.73em;
+  }
+
+  .contact-content{
+    height: 100%;
+    font-size: 1.3em;
+    animation: getContent 0.7s ease-in-out forwards, getText 2s ease-in-out forwards;
+  }
+
+  .contact-content a{
+    padding: 5px 10px;
+    color: rgb(86, 54, 54);
+    font-weight: 450;
+    text-decoration: none;
+  }
+  .contact-content p{
+    padding-left: 10px;
+  }
+
+  /* add animation when a is hovered */
+    .contact-content a:hover{
+        /* add some background box */
+        background-color: rgb(86, 54, 54, 0.1);
+        color: #333;
+        animation: scaleIn 0.5s ease-in-out;
+    }
+    
+    
+  @keyframes scaleIn {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    
+@media screen and (max-width: 1168px) {
+    header nav ul {
+      text-align: center; /* Center the navigation items on smaller screens */
+    }
+    header nav ul li {
+      display: block; /* Display list items as blocks to stack them vertically */
+      margin: 10px 0; /* Add some vertical spacing between navigation items */
+    }
+}
+
+/* keyframes to make content to go from opacity 0 to 1 but also scale them up */
+@keyframes getContent {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes getText {
+  from{
+    transform: scale(0.7);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  
+    /* Add some spacing between the social media icons and the copyright text in mobile view */
+    .social-media-icons {
+      justify-content: center;
+    }
+  
+    /* Adjust the size of the social media icons for mobile view */
+    .social-media-icons a {
+      width: 25px;
+      height: 25px;
+    }
+  
+    .social-media-icons img{
+      width: 15px;
+      height: 15px;}
+  
+    /* Adjust the font size of the copyright text for mobile view */
+    .footer-content p {
+      font-size: 12px;
+    }
+}
