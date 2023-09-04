@@ -13,10 +13,13 @@
   <!-- ... rest of the code ... -->
 <body>
   <header>
-    <div class="menu-icon" id="menuIcon">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+    <div class="sh-icon">
+      <a>sh's page</a>
+    </div>
+    <div class="menu-icon" onclick="display(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
     </div>
     <nav>
       <ul>
@@ -26,6 +29,16 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="loadingOverlay">
+      <div class="loader">
+        <ul>
+          <li><a href="index.html" id="Home">Home</a></li>
+          <li><a href="porto.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
 
 
@@ -259,6 +272,12 @@
       }
     });
   });
+  function display(x) {
+    x.classList.toggle("change");
+    // add the "active" class to the loading overlay
+    document.querySelector(".loadingOverlay").classList.toggle("active");
+    document.querySelector(".loader").classList.toggle("active");
+  }
 </script>
 
 
